@@ -1,0 +1,46 @@
+<% layout("/layouts/boilerplate.ejs") %>
+<div class="row">
+    <div class="col-8 offset-2">
+        <h2>Create new Listing:</h2>
+        <form action="/listings/new" method="post" novalidate class="needs-validation" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="listing[title]" class="form-label">Title:</label>
+                <input type="text" placeholder="Title" name="listing[title]" class="form-control" required>
+                <div class="invalid-feedback">Title can't be empty.</div>
+                <div class="valid-feedback">Title <i class="fa-solid fa-check"></i></div>
+            </div>
+            <div class="mb-3">
+                <label for="listing[description]" class="form-label">Description:</label>
+                <textarea type="text" placeholder="description" name="listing[description]" class="form-control" required></textarea>
+                <div class="invalid-feedback">Enter Description</div>
+                <div class="valid-feedback">Description <i class="fa-solid fa-check"></i></div>
+            </div>
+            <div class="mb-3">
+                <label for="listing[price]" class="form-label">Price:</label>
+                <input type="number" placeholder="price" name="listing[price]" class="form-control" required>
+                <div class="invalid-feedback">Enter Price</div>
+                <div class="valid-feedback">Price <i class="fa-solid fa-check"></i></div>
+            </div>
+            <div class="row">
+                <div class="mb-3 col-md-8">
+                    <label for="listing[location]" class="form-label">Location:</label>
+                    <input type="text" placeholder="location" name="listing[location]" class="form-control" required>
+                    <div class="invalid-feedback">Enter Location</div>
+                    <div class="valid-feedback">Location <i class="fa-solid fa-check"></i></div>
+                </div>
+                <div class="mb-3 col-md-4">
+                    <label for="listing[country]" class="form-label">Country:</label>
+                    <input type="text" placeholder="country" name="listing[country]" class="form-control" required>
+                    <div class="invalid-feedback">Enter Country</div>
+                    <div class="valid-feedback">Country <i class="fa-solid fa-check"></i></div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="listing[image]" class="form-label">Upload Image:</label>
+                <input type="file" name="listing[image]" class="form-control" required>
+                <div class="valid-feedback">If empty, default image will be used</div>
+            </div>
+            <button class="btn btn-dark btn-add">Add</button>
+        </form>
+    </div>
+</div>
