@@ -91,6 +91,10 @@ app.listen(3000, ()=>{
     console.log("app is listening...");
 });
 
+app.get("/", (req,res)=>{
+    res.redirect("/listings");
+});
+
 app.all("*", (req,res,next)=>{
     throw new ExpressError(404, "Page Not Found !");            // used throw because it is not a async function.
 });
